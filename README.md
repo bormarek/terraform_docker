@@ -3,13 +3,14 @@ Terraform vs Docker
 
 starting terraform with action parameter to start or stop docker env.
 
+starting env:
 
-terraform apply -var="action=up"
-terraform apply -var="action=down"
+    terraform apply -var="action=up"
+    starting docker without putting output to backgroud
+    terraform apply -var action=up -var docker_compose_flags=""
 
-or we could based on default values located on variable file or variable section in main.tf file
 
-variable "action" {
-  description = "Action to perform: start or stop"
-  default     = "up"
-}
+destroying env:
+
+    terraform apply -var action=down -var docker_compose_flags=""
+
