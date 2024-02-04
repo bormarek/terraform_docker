@@ -1,11 +1,12 @@
-how to execute terraform execution to start or stop docker environment
+starting terraform with action parameter to start or stop docker env.
 
-terraform apply -var="action=start"
-terraform apply -var="action=stop"
+
+terraform apply -var="action=up"
+terraform apply -var="action=down"
 
 or we could based on default values located on variable file or variable section in main.tf file
 
 variable "action" {
   description = "Action to perform: start or stop"
-  default     = "start"
+  default     = "up"
 }
